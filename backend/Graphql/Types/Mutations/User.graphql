@@ -1,0 +1,31 @@
+type Mutation {
+  createUser(data: createUserInput): User!
+  updateUser(id: ID!, data: updateUserInput!): User!
+  deleteUser(_id: ID!): User!
+  deleteAllUsers: DeleteAllOutput!
+}
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  cars: [Car]
+}
+
+input createUserInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
+input updateUserInput {
+  email: String!
+  password: String!
+}
+
+type DeleteAllOutput {
+  count: Int
+}

@@ -1,0 +1,10 @@
+type Query {
+  cars: [Car]
+  car(id: ID): Car
+}
+
+type Car {
+  id: ID!
+  carName: String!
+  year: String!
+}

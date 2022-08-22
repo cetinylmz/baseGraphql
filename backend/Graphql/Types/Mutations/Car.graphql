@@ -1,0 +1,28 @@
+type Mutation {
+  createCar(data: createCarInput): Car!
+  updateCar(id: ID!, data: updateCarInput): Car!
+  deleteCar(_id: ID!): Car!
+  deleteAllCars: DeleteAllOutput!
+}
+
+type Car {
+  id: ID!
+  carName: String!
+  year: String!
+}
+
+input createCarInput {
+  carName: String!
+  year: String!
+  user: ID!
+}
+
+input updateCarInput {
+  carName: String
+  year: String
+  user: ID
+}
+
+type DeleteAllOutput {
+  count: Int
+}
